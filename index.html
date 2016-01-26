@@ -1,0 +1,41 @@
+<html>
+    <style>
+        .palette {
+            height: 20px;
+            width: 80px;
+            border: black solid 2px;
+            margin: 5px;
+        }
+        .page-layout {
+            margin: 15px;
+        }
+        .margin-0 {
+            margin: 0px !important;
+        }
+    </style>
+    <head>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-app="colorPalette">
+        <div ng-controller="colorsCtrl" class="page-layout">
+            <span>Choose a color: </span><span ng-include="'PALETTE.html'"></span>
+            
+            <script type="text/ng-template" id="PALETTE.html">
+                <div class="dropdown">
+                    <div data-toggle="dropdown">
+                        <div class="palette" ng-style="{'background-color': selectedColor.code}"></div>
+                        <span class="caret"></span>
+                    </div>
+                    <div class="dropdown-menu">
+                        <div ng-repeat="color in colors" ng-click="selectColor(color)" class="row margin-0"><span class="palette col-md-5" ng-style="{'background-color': color.code}"></span><span class="col-md-5">{{color.title}}</span></div>
+                    </div>
+                </div>
+            </script>
+        </div>
+    </body>
+</html>
