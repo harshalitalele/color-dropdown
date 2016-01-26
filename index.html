@@ -12,6 +12,9 @@
         .margin-0 {
             margin: 0px !important;
         }
+        .width {
+            width: 230px;
+        }
     </style>
     <head>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -32,7 +35,7 @@
                         <span class="caret"></span>
                     </div>
                     <div class="dropdown-menu">
-                        <div ng-repeat="color in colors" ng-click="selectColor(color)" class="row margin-0"><span class="palette col-md-5" ng-style="{'background-color': color.code}"></span><span class="col-md-5">{{color.title}}</span></div>
+                        <div ng-repeat="color in colors" ng-click="selectColor(color)" class="row width margin-0"><span class="palette col-md-5" ng-style="{'background-color': color.code}"></span><span class="col-md-6">{{color.title}}</span></div>
                     </div>
                 </div>
             </script>
